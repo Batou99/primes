@@ -22,12 +22,9 @@ class Table
   # In an ideal world this method would also be private but did not
   # want to fiddle with ZenTest to capture puts output
   def lines
-    first = ["+", @xs].flatten.map { |e| format(e) }
-    rest  = @ys.zip(@contents).map do |lead, list|
-      ([lead] + list).map { |e| format(e) }
+    @ys.zip(@contents).map do |lead, list|
+      list.map { |e| format(e) }
     end
-
-    [first] + rest
   end
 
   private

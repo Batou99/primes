@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Move to the base project directory if not there already.
+cd "$(dirname "$0")"/..
+
+ruby test/primelib_test.rb
+ruby test/table_test.rb
